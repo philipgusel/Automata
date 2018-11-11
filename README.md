@@ -27,4 +27,25 @@ a = mkautomata states init endstates delta
 -- check if 4 is in the language (is divisible by 4)
 checkword a ["1","0","0"]
 
+
+-- Example 2: automata that checks if a word is a vector
+
+states = [1,2,3,4,5]
+endstates = [5]
+s = 1
+
+delta i s
+        | i == 1 && s == "(" = 2
+        | i == 2 && s == "-" = 3
+        | i == 2 && s `element` ["0","1","2","3","4","5","6","7","8","9"] = 4
+        | i == 3 && s `element` ["0","1","2","3","4","5","6","7","8","9"] = 4
+        | i == 4 && s == ";" = 2
+        | i == 4 && s `element` ["0","1","2","3","4","5","6","7","8","9"] = 4
+        | i == 4 && s == ")" = 5
+       
+a = mkautomata states endstates s delta
+
+--check if  (0;0;0) is valid notation for a vector
+checkword a ["(","0",";","0",";","0",")"]
+
 ```
