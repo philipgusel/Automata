@@ -19,7 +19,7 @@ delta i s
         | i == 2 && s == "1" = 1
         | i == 2 && s == "0" = 3
         | i == 3 && s == "1" = 1
-        | i == 3 && s == "0"
+        | i == 3 && s == "0" = 3
 
 -- function checking if the automata is valid
 a = mkautomata states init endstates delta
