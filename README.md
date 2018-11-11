@@ -20,6 +20,8 @@ delta i s
         | i == 2 && s == "0" = 3
         | i == 3 && s == "1" = 1
         | i == 3 && s == "0" = 3
+        --- 0 als failure state
+        | otherwise = 0
 
 -- function checking if the automata is valid
 a = mkautomata states init endstates delta
@@ -42,6 +44,8 @@ delta i s
         | i == 4 && s == ";" = 2
         | i == 4 && s `element` ["0","1","2","3","4","5","6","7","8","9"] = 4
         | i == 4 && s == ")" = 5
+        --- 0 as failure state
+        | otherwise = 0
        
 a = mkautomata states endstates s delta
 
