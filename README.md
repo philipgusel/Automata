@@ -6,8 +6,6 @@ Usage:
 ```haskell
 -- Example: automata that determines if a binary number is divisible by 4
 import Automata
--- a list of states
-states = [1,2,3]
 -- the initial state
 init = 1
 -- a list of end states
@@ -23,8 +21,8 @@ delta i s
         --- 0 als failure state
         | otherwise = 0
 
--- function checking if the automata is valid
-a = mkautomata states init endstates delta
+
+a = (endstates,init,delta)
 
 -- check if 4 is in the language (is divisible by 4)
 checkword a ["1","0","0"]
@@ -47,7 +45,7 @@ delta i s
         --- 0 as failure state
         | otherwise = 0
        
-a = mkautomata states endstates s delta
+a = (endstates,s,delta)
 
 --check if  (0;0;0) is valid notation for a vector
 checkword a ["(","0",";","0",";","0",")"]
