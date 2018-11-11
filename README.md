@@ -5,7 +5,7 @@ Usage:
 
 ```haskell
 -- Example: automata that determines if a binary number is divisible by 4
-
+import Automata
 -- a list of states
 states = [1,2,3]
 -- the initial state
