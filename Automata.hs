@@ -7,6 +7,12 @@ type Init = Integer
 
 type Automata = (Endstates,Init,Delta)
 
+element :: a -> [a] -> Bool
+element _ [] = False
+element a (x:xs)
+	| x == a = True
+	| otherwise = element a xs
+
 checkword :: Automata -> [String] -> Bool
 checkword (e,i,d) l  = checkwordrecur (e,i,d) l i
 
