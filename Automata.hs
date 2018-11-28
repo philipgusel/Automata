@@ -7,7 +7,6 @@ type Init = Integer
 
 type Automata = (Endstates,Init,Delta)
 
-element :: a -> [a] -> Bool
 element _ [] = False
 element a (x:xs)
 	| x == a = True
