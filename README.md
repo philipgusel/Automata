@@ -30,7 +30,6 @@ checkword a ["1","0","0"]
 
 -- Example 2: automata that checks if a word is a vector
 
-states = [1,2,3,4,5]
 endstates = [5]
 s = 1
 
